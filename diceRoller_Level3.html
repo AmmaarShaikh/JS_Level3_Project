@@ -32,6 +32,12 @@
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
 
+                let rolls = [];
+                for(let i = 0; i <= numberOfDice; i++){
+                    
+                }
+
+
                 cell1.innerHTML = i + 1 + "|";
                 cell2.innerHTML = "NEW CELL2";
             }
@@ -60,7 +66,7 @@
         
     </div>
     <div>
-        <button onclick="roll();">ROLL!</button>
+        <button onclick="createTable();">ROLL!</button>
     </div>
     <div>Roll Amount | Frequency</div>
     <table id = "display">
