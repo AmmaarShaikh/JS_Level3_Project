@@ -21,10 +21,24 @@
             myDiv1.innerHTML = numberOfDice + " rolls";
         }
         function roll(){
-            createTable();
+            var rolls = [];
+
+            for (i = 0; i < numberOfDice; i++){
+                rolls.push((Math.random() * (6 * diceNumber)) + 1)
+            }
         }
+        
         function createTable(){
-            for (i = 0; i < (diceNumber * 6); i++){
+            roll();
+            for (i = 1; i <= diceNumber * 6; i++){
+                count = 0
+
+                for (j = 0; j <= rolls.length; j++){
+                    if (i == rolls[j]){
+                        count++;
+                    }
+                }
+
                 var table = document.getElementById("display");
 
                 var row = table.insertRow(0);
@@ -33,14 +47,13 @@
                 var cell2 = row.insertCell(1);
 
                 let rolls = [];
-                for(let i = 0; i <= numberOfDice; i++){
-                    
-                }
 
+                cell1.innerHTML = i + " | ";
+                cell2.innerHTML = count;
 
-                cell1.innerHTML = i + 1 + "|";
-                cell2.innerHTML = "NEW CELL2";
             }
+                
+            
         }
     </script>
     <style>
